@@ -77,7 +77,7 @@ export const Carousel = () => {
 
   return (
     <>
-      <ReactCarousel      
+      <ReactCarousel
         infiniteLoop
         axis="vertical"
         className="react-carousel"
