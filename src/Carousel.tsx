@@ -3,14 +3,9 @@ import { Carousel as ReactCarousel } from "react-responsive-carousel";
 import "./styles.css";
 import { FC, useState } from "react";
 
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
-
 const slides = [
   {
-    icon: faCoffee,
+    icon: "home",
     color: "#691aa6",
     page: (
       <>
@@ -82,7 +77,7 @@ export const Carousel = () => {
 
   return (
     <>
-      <ReactCarousel
+      <ReactCarousel      
         infiniteLoop
         axis="vertical"
         className="react-carousel"
