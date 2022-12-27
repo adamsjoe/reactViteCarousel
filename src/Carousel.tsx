@@ -6,6 +6,7 @@ import { FC, useState } from "react";
 const slides = [
   {
     icon: "home",
+    key: 'home',    
     color: "#691aa6",
     page: (
       <>
@@ -21,6 +22,7 @@ const slides = [
   },
   {
     icon: "settings",
+    key: 'settings',
     color: "#b01d98",
     page: (
       <>
@@ -36,6 +38,7 @@ const slides = [
   },
   {
     icon: "lock",
+    key: 'lock',
     color: "#0888c4",
     page: (
       <>
@@ -49,6 +52,22 @@ const slides = [
       </>
     ),
   },
+  {
+    icon: "cycle",
+    key: 'cycle',
+    color: "#abc408",
+    page: (
+      <>
+        <h2>Reload things</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto fuga
+          quisquam dolorum accusamus porro ea aut eaque nam est. Expedita
+          blanditiis corrupti quaerat vero quibusdam quasi ea velit optio
+          ratione.
+        </p>
+      </>
+    ),
+  },  
 ];
 
 type NavProps = {
@@ -77,6 +96,7 @@ export const Carousel = () => {
 
   return (
     <>
+      <Nav selectedItem={selectedItem} onChange={setSelectedItem}/>
       <ReactCarousel
         infiniteLoop
         axis="vertical"
@@ -87,11 +107,11 @@ export const Carousel = () => {
         showIndicators={false}
         swipeable={true}
         emulateTouch={true}
-        selectedItem={selectedItem}
+        selectedItem={selectedItem}        
         onChange={handleOnChange}
       >
         {slides.map((slide) => (
-          <div style={{ background: slide.color }}>{slide.page}</div>
+          <div key={slide.key} style={{ background: slide.color }}>{slide.page}</div>
         ))}
       </ReactCarousel>
     </>
